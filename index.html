@@ -4,89 +4,115 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>foodAF</title>
+
     <!--Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <!-- Bulma Calendar -->
+    <link rel="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/css/bulma-calendar.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="./assets/style.css">
   </head>
   <body>
 
+    
     <!-- HEADER -->
-  <section id="header" class="section">
-    <div class="container">
-      <h1 class="title">food&fun</h1>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="yelp.js"></script>
-</body>
-  <div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
-
-    <!-- ALL TILESS -->
-    <div class="tile">
-
-      <div class="tile is-parent is-vertical">
-
-          <!-- LOCATION TILE -->
-        <article id="location-tile" class="tile is-child notification is-warning">
-          <p class="title">Where do you want to go?</p>
-          <input class="input is-rounded" type="text" placeholder="Type the zip code here">
-          <button id="location-button" class="button is-white">Search</button>
-        </article>
-
-        <!-- DATE TILE -->
-        <article id="date-tile" class="tile is-child notification is-danger">
-          <p class="title">When do you wanna go?</p>
-          <p class="subtitle">Pick a data for you day-out</p>
-          <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-        </article>
-      </div>
+    <section id="header" class="section">
+        <div class="container">
+          <h1 class="title">food<em style="font-weight: 700;">&fun</em></h1>
+        </div>
+    </section>
 
 
-      <!-- FOOD TRUCK TILE -->
-      <div class="tile is-parent">
-        <article id="food-tile" class="tile is-child notification is-danger">
-          <div id="food-container">
+    <!-- MAIN BODY-->
+    <div id="main-body">  
 
+      <!-- ALL TILES -->
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+
+            <div id="where-and-when" class="tile is-parent is-vertical">
+
+              <!-- LOCATION TILE -->
+              <article id="location-tile" class="tile is-child notification is-warning">
+              <p class="title"><em style="font-weight: 600">Where</em> do you wanna go?</p>
+              <div id="input-submit" class="column">
+
+                <form>
+                    <input id="zip-input" class="input is-rounded" type="number" placeholder="ZIP Code">
+                    <button id="location-button" class="button is-dark" type="submit"><i class="fas fa-search"></i></button>          
+                </form>
+
+              </div>
+              </article>
+
+              <!-- DATE TILE -->
+              <!-- <div id="date-wrap" class="tile is-parent"> -->
+              <article id="date-tile" class="tile is-child notification is-danger">
+                <p class="date title date-text"><em style="font-weight: 600">When</em> do you wanna go?</p>
+                <p class="date subtitle date-text">Pick a date for your outting</p>
+                <input id="date-input" type="date" class="date">
+              </article>
+            <!-- </div> -->
+            </div>
+
+
+            <!-- FOOD TRUCK TILE -->
+            <div id="food-wrap" class="tile is-parent">
+              <article id="food-tile" class="tile is-child notification is-danger">
+                <div id="food-container" class="columns is-multiline is-mobile">
+
+                </div>
+              </article>
+            </div>
           </div>
-        </article>
-      </div>
-    </div>
 
-    <!-- WEATHER TILE -->
-    <div class="tile is-parent">
-      <article id="weather-tile" class="tile is-child notification is-warning">
-        <div id="weather-container" class="content">
-          
-        </div>
-      </article>
-    </div>
-  </div>
+            <!-- WEATHER TILE -->
+            <div class="tile">
+              <article id="weather-tiles" class="tile is-child notification is-warning is-centered">
+                <div id="weather-container" class="is-centered columns is-mobile is-multiline">
+                  
+                </div>
+              </article>
+            </div>
+            
+          </div>
 
-  <!-- EVENTS TILE -->
-  <div class="tile is-parent">
-    <article id="events-tile" class="tile is-child notification is-warning">
-      <div class="content">
-        <div id="events-container" class="content">
-          
+        <!-- EVENTS TILE -->
+        <div id="event-wrap" class="tile is-parent">
+          <article id="events-tile" class="tile is-child notification is-warning">
+            <div class="content">
+              <div id="events-container" class="content">
+                
+              </div>
+            </div>
+          </article>
         </div>
+
       </div>
-    </article>
+
   </div>
-</div>
 
 <!-- FOOTER -->
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>
-        <strong>foodAF</strong> by <a href="https://github.com/Austinkst/foodtruckRepo">devAF</a>
+        <p><strong>foodAF</strong> by <a href="https://austinkst.github.io/FoodandFun/" target="_blank">devAF</a></p>
     </div>
   </footer>
+
  <!---Bulma JS-->
-  <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/js/bulma-calendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./weather.js"></script>
+  <script src="./foodnevents.js"></script>
   </body>
 </html>

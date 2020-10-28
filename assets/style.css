@@ -1,58 +1,236 @@
+html {
+    background-image: url('./images/food-background.jpg');
+    height: 100%;
+}
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+#header {
+    max-height: 15%;
+}
+
+#header, #main-body {
+    flex: 1;
+}
+
 body {
-    background: #ffb553;
-    padding: 2%;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.04rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#main-body {
+    max-height: 75%;
+}
+
+p {
+    font-weight: 300;
 }
 
 /* HEADER */
 
+#header {
+    max-height: 150px;
+}
+
 #header div {
-    margin-left: -1%;
+    margin-left: -0.5%;
 }
 
 #header div h1 {
-    color: white;
+    color: #e1ad01d5;
     font-size: 600%;
-    margin-bottom: -2.5%;
+    font-weight: 300;
+    text-align: left;
+}
+
+/* INPUT */
+
+#zip-input {
+    width: 75%;
+}
+
+#location-button {
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 0% !important    
 }
 
 /* TILES */
 
-article {
-    border: 0.2rem solid transparent;
+.tile .is-child{
+    box-shadow: 9px 10px 8px #c2be80;
 }
 
-article:hover {
-    border: 0.2rem solid #ffb553;
+#main-body, #header {
+    padding: 2%;
 }
 
-#location-tile{
-    background:rgba(255,106,0,0.7);
+#where-and-when {
+    padding-left: 0%;
 }
+
+form {
+    margin-bottom: 5%;
+}
+
+.title {
+    font-weight: 300;
+}
+
+/* TILE COLORS  */
+
+#location-tile, #weather-tiles {
+    background: #a9a677d5;
+}
+
+#date-tile, #events-tile {
+    background: #e1ad01d5;
+}
+
+#food-tile {
+    background: #9d9965d5;
+}
+
+.footer {
+    background: transparent;
+}
+
+/* LOCATION TILE */
+
+#location-tile, #date-tile {
+    height: 33%;
+}
+
+/* DATE TILE */
 
 #date-tile {
-    background: rgba(242,33,90,0.7);
+    padding-bottom: 0%;
 }
 
-#date-tile .subtitle{
+#date-tile .subtitle {
     margin-bottom: 2%;
+    font-weight: 300;
 }
 
-#data-input {
+#date-input {
     border: none;
     padding: 1%;
     margin: 1%;
 }
 
+/* FOOD TRUCK TILE */
+
+#food-wrap {
+    padding-right: 0%;
+}
+
 #food-tile {
-    background: rgba(246,57,60,0.7);
+    overflow: scroll;
+    max-height: 350px;
+    padding: 2%;
 }
-#weather-tile {
-    background: rgba(250,81,30,0.7);
-    min-height: 150px;
+
+#food-container {
+    justify-content: space-between;
+    margin: 0.5% -2.5% 0.5% 0%;
 }
+
+.image-url {
+    max-width: 90%;
+    height: auto;
+    border-radius: 3%;
+    padding: 0%;
+}
+
+.truck-name {
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    font-size: 125%;
+}
+
+#food-truck-image{
+    max-width: 175px;
+    margin: 1.5%;
+    padding: 0%;
+}
+
+.more-yelp, .more-events, .no-events {
+    color: #363636;
+    font-weight: 500;
+}
+
+/* WEATHER TILES */
+
+#weather-container {
+    height: 30%;
+    justify-content: space-around;
+    padding: 0.5% 0% 0.5% 0%;
+}
+
+.card {
+    width: 13%;
+    background: #a9a677;
+    border-radius: 3%;
+    align-items: baseline;
+}
+
+.weather-icon {
+    margin: 0 auto;
+    padding: 0% 0% 0.5% 0%;
+    max-width: 75%;
+}
+
+.card-content {
+    padding-top: 0%;
+    margin: 0 auto;
+}
+
+.card-content p {
+    font-size: 80%;
+}
+
+/* EVENT TILES */
+
+#event-wrap {
+    padding-bottom: 0%;
+    padding-left: 1%;
+    height: 40rem;
+}
+
 #events-tile {
-    background: rgba(238,9,121,0.7);
+    margin-bottom: 0%;
+    overflow: scroll;
 }
+
+.event-name {
+    font-size: 125% !important;
+    margin-top: -10px !important;
+    margin-bottom: 1px !important;
+}
+
+.event-venue {
+    font-size: 100% !important;
+    margin-top: -10px !important;
+    margin-bottom: -15px !important;
+}
+
+.event-address {
+    font-size: 100% !important;
+    margin-bottom: 1px !important;
+
+}
+
+img {
+    height: 50%;
+    max-width: 50%;
+}
+
 
 /* BUTTONS */
 
@@ -60,8 +238,60 @@ article:hover {
     margin-top: 3%;
 }
 
-/* FOOTER */
+/* FOOTER  */
 
-.footer {
-    background :rgba(250,81,30,0.9) 
+footer {
+    max-height: 3%;
+    margin-top: 3%;
+}
+
+
+@media (max-width: 576px){
+
+    #header {
+        max-height: 15%;
+    }
+
+    #main-body {
+        margin: 5%;
+    }
+
+    /* TILES */
+
+    #weather-container {
+        overflow: auto;
+        min-height: 215px;
+    }
+
+    .card {
+        min-width: 70px;
+        max-height: 70px;
+        margin: 2%;
+        padding: 0.5%;
+        text-align: center;
+        border-radius: 10%;
+    }
+
+    .card-content {
+        padding: 0%;
+    }
+
+    .weather-copy {
+        display: none;
+    }
+
+    #food-wrap {
+        padding-left: 0;
+    }
+
+    .tile {
+        min-height: 100px;  
+    }
+
+    /* FOOTER */
+
+    footer {
+        display: none;
+    }
+
 }
