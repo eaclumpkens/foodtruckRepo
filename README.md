@@ -6,7 +6,7 @@ Live Link: https://austinkst.github.io/FoodandFun/
 
 ## Background
 AS a person that loves finding new places to eat, and enjoying music and local events, 
-I WANT an appplication that can quickly display this information. Introducing Food&Fun. 
+I WANT an application that can quickly display this information. Introducing Food&Fun. 
 SO THAT we answer the need for a speedy search and provide a weather forecast for your outing. The applications is responsive and displays perfectly on mobile devices.
 
 ## Food&Fun Functionality
